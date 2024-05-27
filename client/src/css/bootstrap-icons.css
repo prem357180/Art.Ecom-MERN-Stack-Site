@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "bootstrap-icons";
+    src: url("./bootstrap-icons.woff?4601c71fb26c9277391ec80789bfde9c") format("woff"),
+  url("./bootstrap-icons.woff2?4601c71fb26c9277391ec80789bfde9c") format("woff2");
+  }
+  
+  [class^="bi-"]::before,
+  [class*=" bi-"]::before {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: text-bottom;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+
+  .bi-cart-check-fill::before { content: "\f239"; }
+  .bi-cart-check::before { content: "\f23a"; }
+  .bi-cart-dash-fill::before { content: "\f23b"; }
+  .bi-cart-dash::before { content: "\f23c"; }
+  .bi-cart-fill::before { content: "\f23d"; }
+  .bi-cart-plus-fill::before { content: "\f23e"; }
+  .bi-cart-plus::before { content: "\f23f"; }
+  .bi-cart-x-fill::before { content: "\f240"; }
+  .bi-cart-x::before { content: "\f241"; }
+  .bi-cart::before { content: "\f242"; }
+  .bi-cart2::before { content: "\f243"; }
+  .bi-cart3::before { content: "\f244"; }
+  .bi-cart4::before { content: "\f245"; }
+  .bi-three-dots-vertical::before { content: "\f5d3"; }

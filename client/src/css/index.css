@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
+a{
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: larger;
+    color: rgb(225, 255, 253);
+}
+
+a:hover{
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+
+}
+
+.mycard{
+  box-shadow: 0px 0px 2px;
+}
+
+.items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sell>div{
+  margin: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.364);
+  border-radius: 10px;
+}
+
+#tbtns{
+  text-decoration: none;
+  color: green;
+}
+
+img{
+  border-radius: 20px;
+}
+
+.mainpage{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainpage>*{
+  margin: 10px;
+  padding: 20px;
+  width: 20%;
+  text-align: center;
+}
+
+.mainpage > button{
+  font-size: larger;
+  border-radius: 20px;
+}
+
+#reginp{
+  text-align: left;
+}
+
+.regpage{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regpage>*{
+  width: 40%;
+  margin: 10px;
+  height: 40px;
+}
+
+.Ecom{
+  font-family: "Dr Sugiyama", cursive;
+  font-weight: 300;
+  font-size: 250%;
+  font-style: normal;
+  background: -webkit-linear-gradient(#eee,#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: rotateZ(-5deg);
+  text-shadow: 0px 2px 15px rgb(0, 46, 69);
+}
+
+
+@media only screen and (max-width: 900px) {
+    .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2{
+        text-align: center;
+    }
+    
+  .mainpage>button{
+      margin: 10% 10%;
+      width: 80%;
+      text-align: center;
+  }
+  .regpage>*{
+    width: 80%;
+    margin: 10px;
+    height: 40px;
+  }
+  .mainpage>*{
+      width: 80%;
+      margin: 10px;
+      height: 40px;
+  }
+}
