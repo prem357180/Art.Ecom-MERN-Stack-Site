@@ -43,7 +43,10 @@ function Ordered(){
     }, []);
 
     function cancleorder(id){
-        axios.post("http://localhost:5000/cancleorder",{mail:email,id:id}).then((res)=>{if(res){alert('deleted')}else{alert('not deleted')}})
+        function cancled(){
+            {setdata(prevArr => prevArr.filter(item => item._id !== id));alert('Cancled')}
+        }
+        axios.post("http://localhost:5000/cancleorder",{mail:email,id:id}).then((res)=>{if(res){cancled()}else{alert('not deleted')}})
     }
     if(arr.length==0){
         return(

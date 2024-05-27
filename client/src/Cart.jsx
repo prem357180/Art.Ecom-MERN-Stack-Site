@@ -33,7 +33,6 @@ function Cart(){
     async function renderdata(){
         let res = await axios.post("http://localhost:5000/cart",{mail:mail})
         setdata(res.data)
-        console.log(res.data);
     }
     let navigate = useNavigate()
     useEffect(() => {
@@ -50,13 +49,14 @@ function Cart(){
         fetchData();
       }, [])
       async function removefromCart(id){
-        axios.post("http://localhost:5000/removecart",{mail:mail,id:id}).then(alert('removed from cart'))
+        axios.post("http://localhost:5000/removecart",{mail:mail,id:id}).then(setdata(prevArr => prevArr.filter(item => item._id !== id)))
       }
       async function buyItem(id,price){
         let entered  = prompt('enter price')
         console.log(Number(entered));
         if(price===Number(entered)){
-        axios.post("http://localhost:5000/buyItem",{mail:mail,id:id}).then(alert('Payment Done, Out for Delivery'))}
+            function payed(){{setdata(prevArr => prevArr.filter(item => item._id !== id));alert('Payment Done, Out for Delivery')}}
+        axios.post("http://localhost:5000/buyItem",{mail:mail,id:id}).then(payed())}
         else{
             alert('insuffcient amount, not bought')
         }
@@ -80,7 +80,8 @@ function Cart(){
         </div>
         <div className  ="container my-4 ">
         <div className  ="d-flex flex-wrap">
-        {arr.map((e,i)=>{if(e){return <RemoveCard key={i} img={e.img} price={e.price} rating={e.rating} itemId={e._id} removefromCart={removefromCart} buyItem={buyItem}/>}})}    
+        
+        {arr.map((e,i)=>{if(e){return <RemoveCard key={i} img={e.img} price={e.price} rating={e.rating} itemId={e._id} removefromCart={removefromCart} buyItem={buyItem}/>}})}   
         </div>
         </div>
         </>

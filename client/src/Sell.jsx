@@ -69,7 +69,7 @@ function Sell(){
         }
     }
     async function removefromSelling(id){
-        axios.post("http://localhost:5000/removeSelling",{mail:email,id:id}).then((res)=>{if(res){alert('deleted')}else{alert('not deleted')}})
+        axios.post("http://localhost:5000/removeSelling",{mail:email,id:id}).then((res)=>{if(res){(setdata(prevArr => prevArr.filter(item => item._id !== id)))}else{alert('not deleted');}})
       }
     return(
         <>
