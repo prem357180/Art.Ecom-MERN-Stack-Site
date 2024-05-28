@@ -6,6 +6,7 @@ import Nav from './Nav'
 import RemoveSelling from './RemoveSelling'
 import "./css/bootstrap.css" 
 import "./css/index.css"
+import Footer from "./Footer"
 
 async function load(){
     let result = await fetch("http://localhost:5000/getid",{
@@ -62,6 +63,7 @@ function Sell(){
         let i = await handleimg()
         if(i){
             axios.post('http://localhost:5000/sell',{mail:email,image:i,price:price}).then(alert('posted'))
+            setdata([...arr,{img:i,price:price,rating:0}])
             console.log(email);
         }
         else{
@@ -89,6 +91,7 @@ function Sell(){
             </div>
         </div> 
         <Bottom arr={arr} removefromSelling={removefromSelling}/>
+        <Footer/>
         </>
     )
 }

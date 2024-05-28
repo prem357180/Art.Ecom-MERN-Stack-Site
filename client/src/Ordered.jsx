@@ -3,7 +3,7 @@ import { useEffect,useState } from "react"
 import Nav from "./Nav"
 import OrderedCard from "./OrderedCard"
 import axios from 'axios'
-
+import Footer from "./Footer"
 
 async function load(){
     let result = await fetch("http://localhost:5000/getid",{
@@ -51,23 +51,29 @@ function Ordered(){
     if(arr.length==0){
         return(
             <>
+        <div>
         <Nav/>
         <div className='w-100'>
         <h1 className='p-10 m-5'>Ordered Items</h1>
         </div>
-        <h2 className='text-center w-100'>No orders Yet</h2>
+        <h2 className='text-center w-100' >No orders Yet</h2>
+        </div>
+        <Footer/>
         </>
         )
     }else{
     return(
         <>
+        <div>
         <Nav/>
         <h1 className="m-2 px-3">Ordered Items</h1>
             <div className="container mt-4">
-            <div className="items" style={{}}>
+            <div className="items">
                 {arr.map((e,i)=>{if(e){return <OrderedCard key={i} img={e.img} price={e.price} rating={e.rating} itemId={e._id} cancleorder={cancleorder}/>}})}    
             </div>
             </div>
+        </div>
+        <Footer/>
         </>
     )}
 }

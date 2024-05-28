@@ -3,6 +3,7 @@ import Nav from './Nav'
 import { useNavigate } from 'react-router-dom'
 import { useState,useEffect,useReducer } from 'react'
 import axios from 'axios'
+import Footer from './Footer'
 import './css/bootstrap.css'
 import './css/index.css'
 import './css/bootstrap-icons.css'
@@ -64,16 +65,20 @@ function Cart(){
     if(arr.length==0){
         return(
             <>
+        <div>
         <Nav/>
         <div className='w-100'>
         <h1 className='p-10 m-5'>Cart</h1>
-        </div>
         <h2 className='text-center w-100'>Cart is empty</h2>
+        </div>
+        </div>
+        <Footer/>
         </>
         )
     }
     return(
         <>
+        <div>
         <Nav/>
         <div className='w-100'>
         <h1 className='p-10' style={{margin:'2.5%'}}>Cart</h1>
@@ -84,6 +89,8 @@ function Cart(){
         {arr.map((e,i)=>{if(e){return <RemoveCard key={i} img={e.img} price={e.price} rating={e.rating} itemId={e._id} removefromCart={removefromCart} buyItem={buyItem}/>}})}   
         </div>
         </div>
+        </div>
+        <Footer/>
         </>
     )
 }

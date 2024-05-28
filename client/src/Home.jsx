@@ -3,7 +3,7 @@ import Card from './Card'
 import Nav from './Nav'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import Footer from './Footer'
 import "./css/bootstrap.css" 
 import "./css/index.css"
 
@@ -50,22 +50,28 @@ function Home(){
       if(arr.length===0){
         return(
             <>
+            <div>
             <Nav/>
             <div className='justify-content-center w-100'>
             <h1 className='d-flex text-center m-5 justify-content-center'>No one is Selling</h1>
             </div>
+            </div>
+            <Footer/>
             </>
         )
       }
       else{
         return(
-        <>
+        <>  
+        <div>
             <Nav/>
-            <div className="container mt-4">
+            <div className="container mt-4" style={{}}>
             <div className="items" style={{}}>
                 {arr.map((e,i)=>{return <Card key={i} img={e.img} price={e.price} rating={e.rating} itemId={e._id} addtoCart={addtoCart}/>})}    
             </div>
             </div>
+        </div>
+            <Footer/>
         </>
     )}}
 }
